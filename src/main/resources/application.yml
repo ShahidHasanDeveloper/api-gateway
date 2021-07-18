@@ -1,0 +1,18 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: libray_route
+        uri: http://localhost:8082
+        predicates:
+        - Path=/library/*
+          
+      
+server:
+  port: 8083
+  
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
